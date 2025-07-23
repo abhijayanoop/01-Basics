@@ -1,0 +1,24 @@
+{
+  "name": "01-basics",
+  "version": "1.0.0",
+  "description": "basic guide to Node.js",
+  "license": "ISC",
+  "author": "Abhijay Anoop",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "pug": "^3.0.3"
+  }
+}
