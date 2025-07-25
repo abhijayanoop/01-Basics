@@ -15,8 +15,6 @@ app.set("views", "views"); // by default it is views, use only if the html files
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
-db.execute("SELECT * FROM products").then();
-
 app.use(bodyParser.urlencoded({ extended: false })); // for parsing the incoming req body
 app.use(express.static(path.join(__dirname, "public"))); //middleware for serving files statically (stylesheet in shop.html)
 
