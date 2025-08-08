@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "public"))); //middleware for servin
 app.use((req, res, next) => {
   User.findById("68962a3a95d4900c04108727")
     .then((user) => {
-      req.user = user;
+      req.user = new User(user.name, user.email, user.cart, user._id);
       next();
     })
     .catch((err) => console.log(err));
