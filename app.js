@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 const errorController = require("./controllers/error");
 // const mongoConnect = require("./util/database").mongoConnect;
-const User = require("./models/user");
+// const User = require("./models/user");
 
 const app = express();
 
@@ -20,14 +20,14 @@ const shopRoutes = require("./routes/shop");
 app.use(bodyParser.urlencoded({ extended: false })); // for parsing the incoming req body
 app.use(express.static(path.join(__dirname, "public"))); //middleware for serving files statically (stylesheet in shop.html)
 
-app.use((req, res, next) => {
-  User.findById("68962a3a95d4900c04108727")
-    .then((user) => {
-      req.user = new User(user.name, user.email, user.cart, user._id);
-      next();
-    })
-    .catch((err) => console.log(err));
-});
+// app.use((req, res, next) => {
+//   User.findById("68962a3a95d4900c04108727")
+//     .then((user) => {
+//       req.user = new User(user.name, user.email, user.cart, user._id);
+//       next();
+//     })
+//     .catch((err) => console.log(err));
+// });
 
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
