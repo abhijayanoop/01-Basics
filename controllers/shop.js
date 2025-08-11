@@ -19,7 +19,7 @@ exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
     .then((product) => {
-      res.render("shop/product-details", {
+      res.render("shop/product-detail", {
         product: product,
         pageTitle: product.title,
         path: "/products",
@@ -98,8 +98,8 @@ exports.postOrder = (req, res, next) => {
       });
       const order = new Order({
         user: {
-          name: req.session.user.name,
-          userId: req.session.user._id,
+          name: req.user.name,
+          userId: req.user._id,
         },
         products: products,
       });
